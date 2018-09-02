@@ -15,11 +15,20 @@ button.addEventListener('click', function() {
     // alert("you have clicked the button"); Test
 })
 
-// Action, then call a function
+// Action, then call a function (passing in the event (e))
 form.addEventListener('submit', function(e) {
     // keep page from refreshing
     e.preventDefault();
     // test
-    alert(input.value)
-})
+    // alert(input.value)
+
+    todoMaker(input.value);
+    input.value = "";
+});
+
+var todoMaker = function(text){
+    var todo = document.createElement('li');
+    todo.textContent = text;
+    todoList.appendChild(todo);
+}
 
