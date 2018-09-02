@@ -11,10 +11,6 @@ var button = document.querySelector('button');
 var input = document.getElementById('user-todo');
 
 
-button.addEventListener('click', function() {
-    // alert("you have clicked the button"); Test
-})
-
 // Action, then call a function (passing in the event (e))
 form.addEventListener('submit', function(e) {
     // keep page from refreshing
@@ -32,3 +28,9 @@ var todoMaker = function(text){
     todoList.appendChild(todo);
 }
 
+button.addEventListener('click', function() {
+    // alert("you have clicked the button"); Test
+    while (todoList.firstChild) {
+        todoList.removeChild(todoList.firstChild);
+    }
+});
